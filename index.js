@@ -65,12 +65,12 @@
 
 
 let cards= [
-    {title : "nike1467", description: "desc 1", Price: 20},
-    {title : "shirt2", description: "nike", Price: 30},
-    {title : "shirt3", description: "desc 3", Price: 60},
-    {title : "nike", description: "desc 4", Price: 100},
-    {title : "shirt5", description: "nike", Price: 100},
-    {title : "shirt6", description: "desc 6", Price: 104},
+    {title : "nike1467", description: "desc 1", price: 20},
+    {title : "shirt2", description: "nike", price: 30},
+    {title : "shirt3", description: "desc 3", price: 60},
+    {title : "nike", description: "desc 4", price: 100},
+    {title : "shirt5", description: "nike", price: 100},
+    {title : "shirt6", description: "desc 6", price: 104},
 ];
 
 for(let i=0 ; i < cards.length ; i++){
@@ -103,6 +103,45 @@ document.getElementById('search_button').addEventListener('click', function(){
     console.log(input);
     for(let i=0 ; i < cards.length ; i++){
         if((cards[i].title.includes(input) ) || (cards[i].description.includes(input))){
+            document.getElementById("src_card").innerHTML += `
+            <div class="card">
+            <img src="./images/shirt.webp">
+            <h1>${cards[i].title}</h1>
+
+            <div class="price">
+                <span>
+                    ${cards[i].description}
+                </span>
+                <p>
+                ${cards[i].Price}
+                </p>
+                <button>
+                    Add to cart
+                </button>
+            </div>
+            </div>
+            `
+        }
+
+    }
+
+   
+})
+
+
+
+document.getElementById('price_button').addEventListener('click', function(){
+
+
+    document.getElementById("src_card").innerHTML =""
+    let low_range =document.getElementById('price_input_lower').value;
+    let top_range =document.getElementById('price_input_higher').value;
+
+    console.log(low_range);
+    console.log(top);
+
+    for(let i=0 ; i < cards.length ; i++){
+        if((cards[i].price >= low_range ) & (cards[i].price <= top_range)){
             document.getElementById("src_card").innerHTML += `
             <div class="card">
             <img src="./images/shirt.webp">
