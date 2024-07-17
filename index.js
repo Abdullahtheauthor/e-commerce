@@ -74,7 +74,7 @@ let cards= [
 ];
 
 for(let i=0 ; i < cards.length ; i++){
-document.getElementById("src_card").innerHTML += `
+document.getElementById("root").innerHTML += `
 <div class="card">
 <img src="./images/shirt.webp">
 <h1>${cards[i].title}</h1>
@@ -84,7 +84,7 @@ document.getElementById("src_card").innerHTML += `
         ${cards[i].description}
     </span>
     <p>
-    ${cards[i].Price}
+    ${cards[i].price}
     </p>
     <button>
         Add to cart
@@ -94,16 +94,75 @@ document.getElementById("src_card").innerHTML += `
 `
 }
 
+const home_function= () => {
+    document.getElementById("root").innerHTML =""
+    for(let i=0 ; i < cards.length ; i++){
+        document.getElementById("root").innerHTML += `
+        <div class="card">
+        <img src="./images/shirt.webp">
+        <h1>${cards[i].title}</h1>
+        
+        <div class="price">
+            <span>
+                ${cards[i].description}
+            </span>
+            <p>
+            ${cards[i].price}
+            </p>
+            <button>
+                Add to cart
+            </button>
+        </div>
+        </div>
+        `
+        }
+}
 
-document.getElementById('search_button').addEventListener('click', function(){
+const addForm = () => {
+    document.getElementById("root").innerHTML = `
+ 
+
+    <div class="parent_form" >
+        <form class="form">
+
+            <h1> SignUp Form</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" id="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="psw" required>
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+    
+    
+
+        </form>
+    </div>
+`;
 
 
-    document.getElementById("src_card").innerHTML =""
+}
+
+
+// document.getElementById('search_button').addEventListener('click', function(){
+
+// Search button function
+const search = () => {
+    document.getElementById("root").innerHTML =""
     let input =document.getElementById('search_input').value;
     console.log(input);
     for(let i=0 ; i < cards.length ; i++){
         if((cards[i].title.includes(input) ) || (cards[i].description.includes(input))){
-            document.getElementById("src_card").innerHTML += `
+            document.getElementById("root").innerHTML += `
             <div class="card">
             <img src="./images/shirt.webp">
             <h1>${cards[i].title}</h1>
@@ -113,7 +172,7 @@ document.getElementById('search_button').addEventListener('click', function(){
                     ${cards[i].description}
                 </span>
                 <p>
-                ${cards[i].Price}
+                ${cards[i].price}
                 </p>
                 <button>
                     Add to cart
@@ -124,16 +183,16 @@ document.getElementById('search_button').addEventListener('click', function(){
         }
 
     }
-
+    }
    
-})
+// })
 
 
 
 document.getElementById('price_button').addEventListener('click', function(){
 
 
-    document.getElementById("src_card").innerHTML =""
+    document.getElementById("root").innerHTML =""
     let low_range =document.getElementById('price_input_lower').value;
     let top_range =document.getElementById('price_input_higher').value;
 
@@ -142,7 +201,7 @@ document.getElementById('price_button').addEventListener('click', function(){
 
     for(let i=0 ; i < cards.length ; i++){
         if((cards[i].price >= low_range ) & (cards[i].price <= top_range)){
-            document.getElementById("src_card").innerHTML += `
+            document.getElementById("root").innerHTML += `
             <div class="card">
             <img src="./images/shirt.webp">
             <h1>${cards[i].title}</h1>
@@ -152,7 +211,7 @@ document.getElementById('price_button').addEventListener('click', function(){
                     ${cards[i].description}
                 </span>
                 <p>
-                ${cards[i].Price}
+                ${cards[i].price}
                 </p>
                 <button>
                     Add to cart

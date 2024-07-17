@@ -9,24 +9,30 @@
 </head>
 <body>
     <div class="nav">
-        <a class="active" href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <div class="count float">
-            <select name="heloo" id="sel">
-                <option></option>
-            </select>
-            <input id="search_input">
-            <button id ="search_button">search</button>
+        <div class="links">
+            <a class="active" href=#home onclick="home_function()">Home</a>
+            <a href="#login" onclick="addForm()">Login</a>
+            <a href="#signup">SignUp</a>
+            <a href="#about">About</a>
+        </div>
+
+        <!-- <a href="#contact">Contact</a>
+        <a href="#about">About</a> -->
+        
+        <div class="buttons_nav">
+  
+            <form class="example" action="/action_page.php"></form>
+            <input id="search_input" placeholder="Search.." type="text">
+            <button id ="search_button" onclick="search()" type="submit">  Search</i></button>
+        </form>
+
             <br>
+            <input id="price_input_lower" placeholder="Lower range.." >
+            <input id="price_input_higher" placeholder="Higher range.." >
+            <button id ="price_button">Filter </button>
 
         </div>
-        <div>
-        <input id="price_input_lower">
-        <input id="price_input_higher">
-        <button id ="price_button">price </button>
-    </div>
+
     </div>
 
     <!-- <div class="clear"></div>
@@ -36,10 +42,13 @@
      <br>
      <br>
 
-    <div id="src_card">
+    <div id="root">
     
       
     </div>
+
+
+
 
 
    
