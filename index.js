@@ -117,6 +117,36 @@ const home_function= () => {
         `
         }
 }
+let users= [
+    {username : "abdullah", password: "what2"},
+    {username : "ahmed", password: "Goforit"},
+    {username : "wael", password: "9to9men 3"},
+    {username : "tamer", password: "childrenofmen"},
+    {username : "sef", password: "diamond"},
+    {username : "ashraf", password: "Crazy8"}
+];
+
+
+const login = (event) => {
+    event.preventDefault();
+    let username = document.getElementById("email");
+    let password = document.getElementById("psw");
+    for(let i=0 ; i < users.length ; i++){
+        if (users[i].username === username && users[i].password === password)
+        {   
+            console.log(username + "  " + password); 
+            // document.getElementById("root").innerHTML =""
+            // document.getElementById("root").innerHTML += `
+            // <h1> You are successfully loged in</h1>
+            
+            // `
+
+        }
+    }
+    alert("Invalid credentials");
+
+   
+}
 
 const addForm = () => {
     document.getElementById("root").innerHTML = `
@@ -140,17 +170,23 @@ const addForm = () => {
 
             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
+            <button type="submit" class="loginButton" id="login" onclick="login()">Login</button>
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn">Sign Up</button>
+          
     
-    
+        
 
         </form>
     </div>
+   
+
 `;
+document.getElementById("loginForm").addEventListener("submit", login);
 
 
 }
+
+
 
 
 // document.getElementById('search_button').addEventListener('click', function(){
