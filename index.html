@@ -5,63 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
+   
 </head>
 <body>
     <div class="nav">
         <div class="links">
-            <a class="active" href=#home onclick="home_function()">Home</a>
+            <a class="active" href="#home" onclick="displayCards()">Home</a>
             <a href="#login" onclick="addForm()">Login</a>
             <a href="#signup">SignUp</a>
             <a href="#about">About</a>
         </div>
 
-        <!-- <a href="#contact">Contact</a>
-        <a href="#about">About</a> -->
-        
         <div class="buttons_nav">
-  
-            <form class="example" action="/action_page.php"></form>
             <input id="search_input" placeholder="Search.." type="text">
-            <button id ="search_button" onclick="search()" type="submit">  Search</i></button>
-        </form>
+            <button id="search_button" onclick="search()" type="submit">Search</button>
 
             <br>
-            <input id="price_input_lower" placeholder="Lower range.." >
-            <input id="price_input_higher" placeholder="Higher range.." >
-            <button id ="price_button">Filter </button>
-
+            <input id="price_input_lower" placeholder="Lower range..">
+            <input id="price_input_higher" placeholder="Higher range..">
+            <button id="price_button">Filter</button>
         </div>
-
     </div>
 
-    <!-- <div class="clear"></div>
-     
-     -->
+    <br><br>
 
-     <br>
-     <br>
-
-    <div id="root">
-    
-      
-    </div>
-
-
-
-
-
-   
-
-
-
- 
- 
-
+    <div id="root"></div>
 
     <script src="index.js"></script>
-
-
-
 </body>
 </html>
