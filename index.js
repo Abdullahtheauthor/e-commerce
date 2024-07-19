@@ -73,18 +73,20 @@ let cards= [
     {title : "shirt6", description: "desc 6", Price: 104},
 ];
 
-for(let i=0 ; i < cards.length ; i++){
+
+const render_products=(data) => {
+for(let i=0 ; i < data.length ; i++){
 document.getElementById("src_card").innerHTML += `
 <div class="card">
 <img src="./images/shirt.webp">
-<h1>${cards[i].title}</h1>
+<h1>${data[i].title}</h1>
 
 <div class="price">
     <span>
-        ${cards[i].description}
+        ${data[i].description}
     </span>
     <p>
-    ${cards[i].Price}
+    ${data[i].Price}
     </p>
     <button>
         Add to cart
@@ -92,6 +94,7 @@ document.getElementById("src_card").innerHTML += `
 </div>
 </div>
 `
+}
 }
 
 
