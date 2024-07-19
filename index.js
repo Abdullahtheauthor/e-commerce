@@ -48,7 +48,8 @@ login_fun = function() {
     for (let i = 0; i < users.length; i++) {
         if (users[i].username === username && users[i].password === password) {
             isAuthenticated = true;
-            document.getElementById("root").innerHTML = "<h1>You are successfully logged in</h1>";
+            // document.getElementById("root").innerHTML = "<h1>You are successfully logged in</h1>"; // admin form
+            adminFormFunction();
             break;
         }
     }
@@ -58,7 +59,50 @@ login_fun = function() {
     }
 };
 
+function adminFormFunction(){
+    const root = document.getElementById("root");
+    root.innerHTML = "";
+    root.innerHTML =`    <div>
+    <div class="parent_form">
+        <form class="form">
+            <h1>Admin Form</h1>
+            <p>Please fill in this form to add a product.</p>
+            <hr>
+            <label><b>Title</b></label>
+            <input type="text" placeholder="Enter title of the product" id="title" required>
+            <label description><b>description</b></label>
+            <input type="text" placeholder="Enter description" id="description" required>
+
+            <label Price><b>Price</b></label>
+            <input type="number" placeholder="Enter Price of the item" id="price" required>
+
+
+
+            <button type="button" class="Add" id="add_product" onclick="add_item()">ADD</button>
+            <button type="button" class="cancelbtn">Cancel</button>
+        </form>
+    </div>
+</div>`
+
+
+}
+
+function add_item(){
+    let title = document.getElementById("title").value;
+    let description =document.getElementById("description").value;
+    let price = document.getElementById("price").value;
+    let product = {"title": title, "description": description, "price": price};
+    cards.push(product);
+    displayCards();
+    document.getElementById("title").innerHTML =" ";
+    document.getElementById("description").innerHTML =" ";
+    document.getElementById("price").innerHTML =" ";
+
+
+}
+
 function displayCards() {
+
     const root = document.getElementById("root");
     root.innerHTML = "";
     for (let i = 0; i < cards.length; i++) {
@@ -74,6 +118,7 @@ function displayCards() {
             </div>
         `;
     }
+
 }
 
 function search() {
