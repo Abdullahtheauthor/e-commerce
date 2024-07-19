@@ -1,27 +1,63 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
+body{
+    background-image: url("./images/pngtree-seamless-repeat-pattern-with-flowers-and-leaves-scandinavian-childish-drawing-background-image_329827.jpg");
+    Background-repeat: repeat; 
+}
 .nav{
-    background-color: rgb(251, 255, 0);
-    /* float: right; */
-    /* display: inline; */
-    
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #333;
+    height: 50px;
+    box-shadow: 5px 5px 10px rgba(213, 10, 10, 0.3);
+    position: fixed;
+    width: 100%;
 }
 
-.float{
-    float: left;
+.links{
+    /* background-color: azure; */
+    align-content: center;
+    width: 200px;
+    align-items: center;
+    width: fit-content;
+    
+    
 }
+.links a{
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* .links a.active {
+    background-color: #04AA6D;
+    color: white;
+  } */
+
+.links a:hover{
+    background-color: #04AA6D;
+    color: white;
+}
+
+.buttons_nav{
+    /* background-color: brown; */
+    align-content: center;
+
+}
+
 #src_card{
     background-color: rgb(27, 2, 11);
 }
 
 
-/* .count{
-    background-color: rgb(34, 218, 218);
-} */
+
+
 .card{
     display: flex;
     flex-direction: column;
@@ -33,9 +69,17 @@
     min-width: 40px;
 }
 
-#src_card{
+#root{
     display: flex;
     flex-wrap: wrap;
+    background-image: url("./images/pngtree-seamless-repeat-pattern-with-flowers-and-leaves-scandinavian-childish-drawing-background-image_329827.jpg");
+    Background-repeat: repeat; 
+    align-items: center;
+    flex-direction: row;
+    align-self: center;
+    align-content: center;
+    justify-content: space-around;
+    margin: 1rem 0;
 }
 
 .card :hover{
@@ -43,3 +87,59 @@
 }
 
 
+
+
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+/* Add padding to container elements */
+
+
+.parent_form{
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: column;
+    align-content: center;
+    padding: 10px;
+    background-color: #04AA6D   ;
+}
+
+.form{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 10px;
+    background-color: #888;
+}
+
+.form button{
+    padding: 5px;
+    margin: 5px;
+}
+.fotm button:hover{
+
+  opacity:1;
+
+
+}
+
+.form input{
+    padding: 5px;
+    margin: 5px;
+}
+.form h1{
+    margin:20px;
+    text-align: center;
+}
+
+.form p{
+    margin:20px;
+    text-align: center;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}

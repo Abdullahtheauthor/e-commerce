@@ -5,46 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
+   
 </head>
 <body>
     <div class="nav">
-        <h1 >here is the nav bar</h1>
-        <a href="#" onclick="render_products(cards)"> home </a>
-        <div class="float">
-            <select name="" id="sel">
-                <option></option>
-            </select>
-            <input id="search_input">
-            <button id ="search_button">search</button>
-        
+        <div class="links">
+            <a class="active" href="#home" onclick="displayCards()">Home</a>
+            <a href="#login" onclick="addForm()">Login</a>
+            <a href="#signup">SignUp</a>
+            <a href="#about">About</a>
+        </div>
+
+        <div class="buttons_nav">
+            <input id="search_input" placeholder="Search.." type="text">
+            <button id="search_button" onclick="search()" type="submit">Search</button>
+
+            <br>
+            <input id="price_input_lower" placeholder="Lower range..">
+            <input id="price_input_higher" placeholder="Higher range..">
+            <button id="price_button">Filter</button>
         </div>
     </div>
-    <!-- <br>
-    <br> -->
-     
-<!--   
-    
 
+    <br><br>
 
--->
+    <div id="root"></div>
 
-<div id="src_card">
-
-</div>
-
-
-   
-
-
-
- 
- 
 
 
     <script src="index.js"></script>
-
-
-
 </body>
 </html>
