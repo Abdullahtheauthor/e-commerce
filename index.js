@@ -1,11 +1,19 @@
 let cards = [
-    { title: "nike1467", description: "desc 1", price: 20 },
-    { title: "shirt2", description: "nike", price: 30 },
-    { title: "shirt3", description: "desc 3", price: 60 },
-    { title: "nike", description: "desc 4", price: 100 },
-    { title: "shirt5", description: "nike", price: 100 },
-    { title: "shirt6", description: "desc 6", price: 104 }
+    { title: "nike1467", description: "desc 1", price: 20, id:1 },
+    { title: "shirt2", description: "nike", price: 30, id:2  },
+    { title: "shirt3", description: "desc 3", price: 60, id:3  },
+    { title: "nike", description: "desc 4", price: 100 , id:4 },
+    { title: "shirt5", description: "nike", price: 100, id:5 },
+    { title: "shirt6", description: "desc 6", price: 104 , id:6 }
 ];
+// let cards = [
+//     { "title": "nike1467", "description": "desc 1", "price": 20, "id":1 },
+//     { "title": "shirt2", "description": "nike", "price": 30, "id":2  },
+//     { "title": "shirt3", "description": "desc 3", "price": 60, "id":3  },
+//     { "title": "nike", "description": "desc 4", "price": 100 , "id":4 },
+//     { "title": "shirt5", "description": "nike", "price": 100, "id":5 },
+//     { "title": "shirt6", "description": "desc 6", "price": 104 , "id":6 }
+// ];
 
 let users = [
     { username: "abdullah", password: "what2" },
@@ -15,6 +23,8 @@ let users = [
     { username: "sef", password: "diamond" },
     { username: "ashraf", password: "Crazy8" }
 ];
+
+let carts =[];
 
 
 
@@ -223,7 +233,7 @@ function displayCards() {
                 <div class="price">
                     <span>${cards[i].description}</span>
                     <p>${cards[i].price}</p>
-                    <button>Add to cart</button>
+                    <button onclick="cartSaveItem(${cards[i].id})">Add to cart</button>
                 </div>
             </div>
         `;
@@ -264,13 +274,23 @@ function priceFilter() {
                     <div class="price">
                         <span>${cards[i].description}</span>
                         <p>${cards[i].price}</p>
-                        <button>Add to cart</button>
+                        <button onclick="cartSaveItem(${cards[i].id})">Add to cart</button>
                     </div>
                 </div>
             `;
         }
     }
 }
+
+cartSaveItem = (card_id) =>{
+    for (let i = 0; i < cards.length; i++) {
+        if(cards[i].id === card_id){
+            let card_obj = {"title": cards[i].title , "description": cards[i].description, "price": cards[i].price, "id": cards[i].id};
+            carts.push(card_obj);
+                }
+    }
+}
+
 
 // Load cards on initial page load
 window.onload = function () {
