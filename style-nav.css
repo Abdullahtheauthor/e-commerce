@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav img{
+    width: 100px;
+    /* height: 60px; */
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+
+}
+
+nav ul li{
+    margin: 0px 1px;
+    padding: 10px;
+    background-color: aquamarine;
+    align-content: center;
+   
+
+}
